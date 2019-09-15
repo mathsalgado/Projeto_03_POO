@@ -10,18 +10,16 @@
 <!DOCTYPE html>
 <%
     if(request.getParameter("cancelar")!=null){
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("../index.jsp");
     }
     try {
         if(request.getParameter("add")!=null){
-            DbBanda.getBandas().add(new Banda(request.getParameter("nome"),request.getParameter("genero"),Integer.parseInt(request.getParameter("membro"))));
+            DbBanda.getBandas().add(new Banda(request.getParameter("nome"),request.getParameter("genero"),Integer.parseInt(request.getParameter("membros"))));
+            response.sendRedirect("../index.jsp");
         }
     } catch (Exception e) {%>
         <h1 style="color:red;"> A Error ocurred:<%= e.getMessage() %></h1>
-    <%}
-    
-
-%>
+    <%}%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

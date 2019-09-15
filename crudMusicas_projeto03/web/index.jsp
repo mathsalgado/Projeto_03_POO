@@ -32,8 +32,8 @@
                 <td><%= banda.getEstilo() %></td>
                 <td><%= banda.getMembro() %></td>
                 <td>
-                    <a href="./bandas/alterar.jsp">Alterar</a>
-                    <a href="./bandas/Excluir.jsp">Excluir</a>
+                    <a href="./bandas/alterar.jsp?id=<%=DbBanda.getBandas().indexOf(banda)%>">Alterar</a>
+                    <a href="./bandas/Excluir.jsp?id=<%=DbBanda.getBandas().indexOf(banda)%>">Excluir</a>
                 </td>
             </tr>
             
