@@ -4,6 +4,8 @@
     Author     : Estudos
 --%>
 
+<%@page import="br.com.fatecpg.musicas.DbBanda"%>
+<%@page import="br.com.fatecpg.musicas.Banda"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,7 +15,30 @@
     </head>
     <body>
         <h1>Cadastro de Música, Bandas e discos</h1>
-        <br>
-        <a href="/bandas/cadastrar.jsp"><h3> Cadastro de Bandas </h3> </a>
+        
+        <h2> Nossas Bandas </h2>
+        <table border="1">
+            <tr>
+                <th>Índice</th>
+                <th>Nome</th>
+                <th>Gênero</th>
+                <th>Quantidade de Membros</th>
+                <th>Opções</th>
+            </tr>  
+            <% for(Banda banda: DbBanda.getBandas()){ %>
+            <tr>
+                <td><%= DbBanda.getBandas().indexOf(banda) %></td>
+                <td><%= banda.getNome() %></td>
+                <td><%= banda.getEstilo() %></td>
+                <td><%= banda.getMembro() %></td>
+                <td>
+                    <a href="./bandas/alterar.jsp">Alterar</a>
+                    <a href="./bandas/Excluir.jsp">Excluir</a>
+                </td>
+            </tr>
+            
+            <%}%>
+        </table>
+        <a href="./bandas/incluir.jsp"><h3> Nova Banda </h3> </a>
     </body>
 </html>
