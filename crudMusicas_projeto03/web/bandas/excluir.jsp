@@ -31,7 +31,9 @@
         <h1>Tem certeza que deseja excluir a banda?</h1>
             
             <% int valor = Integer.parseInt( request.getParameter("id") );%>
-            <p><%= valor %></p>
+            <% if(DbBanda.getBandas().get(valor)==null){
+               response.sendRedirect("../index.jsp"); 
+            } %>
             <%Banda banda = DbBanda.getBandas().get(valor);%> 
      
         <form>
