@@ -53,7 +53,7 @@
             <input type="text" name="music" value="<%discos.getMusic();%>"> <br><br>
 
             <input type="submit" name="cancelar" value="Cancelar">
-            <input type="submit" name="alterar" value="Alterar">
+            <input type="submit" name="excluir" value="Excluir">
 
         </form>
     </body>
