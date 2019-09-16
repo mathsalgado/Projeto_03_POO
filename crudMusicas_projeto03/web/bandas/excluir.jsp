@@ -34,7 +34,7 @@
             
             <% int valor = Integer.parseInt( request.getParameter("id") );%>
             <% if(DbBanda.getBandas().get(valor)==null){
-               response.sendRedirect("../index.jsp"); 
+               response.sendRedirect("./Projeto_03_POO/index.jsp"); 
             } %>
             <%Banda banda = DbBanda.getBandas().get(valor);%> 
      
