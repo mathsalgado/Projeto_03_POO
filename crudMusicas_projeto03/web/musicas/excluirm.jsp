@@ -21,7 +21,7 @@
       
     } catch (Exception e){%>
            <h1 style="color:red;"> A Error ocurred:<%= e.getMessage() %></h1>
-    }
+    <%}%>
 %>
 <html>
     <head>
@@ -32,7 +32,7 @@
     </head>
     <body>
         <h1>Deseja alterar esta Música?</h1>
-            <% int indice = Integer.parseInt(request.getParameter("indice"));%>
+            <% int indice = Integer.parseInt(request.getParameter("id"));%>
             <% if(DbMusicas.getMusicas().get(indice) == null){
                 response.sendRedirect("../index.jsp");
             }
