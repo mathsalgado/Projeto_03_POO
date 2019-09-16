@@ -8,6 +8,8 @@
 <%@page import="br.com.fatecpg.musicas.Musicas"%>
 <%@page import="br.com.fatecpg.musicas.DbBanda"%>
 <%@page import="br.com.fatecpg.musicas.Banda"%>
+<%@page import="br.com.fatecpg.musicas.DbDiscos"%>
+<%@page import="br.com.fatecpg.musicas.Discos"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -19,7 +21,7 @@
         <title>CRUD MUSICAL</title>
     </head>
     <body>
-    <center><h1>Cadastro de Música, Bandas e discos</h1></center>
+    <center><h1>Cadastro de Música, Bandas e Discos</h1></center>
         
         <h2> <center>Nossas Bandas</center> </h2>
         <table border="1" class="table">
@@ -74,5 +76,35 @@
     
         <a href="./musicas/incluirm.jsp"><button type="button" name="" value="" class="css3button">Nova Música</button></a> 
             
+        <h2> <center>Nossos Discos</center> </h2>    
+        
+        <table border="1" class="table">    
+            <tr>
+                <th class="cabecalho">Índice</th>
+                <th class="cabecalho">Título</th>
+                <th class="cabecalho">Banda</th>
+                <th class="cabecalho">Gênero</th>
+                <th class="cabecalho">Mais tocadas</th>
+                <th class="cabecalho">Opções</th>
+            </tr>  
+            <% for(Discos discos: DbDiscos.getDiscos()){ %>
+            <tr>
+                <td><%= DbDiscos.getDiscos().indexOf(discos) %></td>
+                <td><%= discos.getNome() %></td>
+                <td><%= discos.getBanda() %></td>
+                <td><%= discos.getGenero() %></td>
+                <td><%= discos.getMusic() %></td>
+                <td>
+                    
+                    <a href="./musicas/alterard.jsp?id=<%=DbDiscos.getDiscos().indexOf(discos)%>">Alterar</a>
+                    <a href="./musicas/excluird.jsp?id=<%=DbDiscos.getDiscos().indexOf(discos)%>">Excluir</a>
+                </td>
+            </tr>
+            <%}%>
+        </table>
+    
+        <a href="./musicas/incluird.jsp"><button type="button" name="" value="" class="css3button">Novo Disco</button></a> 
+            
+        
     </body>
 </html>
