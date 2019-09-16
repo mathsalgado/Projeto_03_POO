@@ -22,7 +22,7 @@
         }
     } catch (Exception e){%>
         <h1 style="color:red;"> Errroouu!:<%= e.getMessage() %></h1>
-    } <%}%>
+     <%}%>
 
 <html>
     <head>
