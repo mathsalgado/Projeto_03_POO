@@ -13,13 +13,11 @@
     try {
         if (request.getParameter("cancelar") != null) {
             response.sendRedirect("../index.jsp");
-        }
-        else if (request.getParameter("excluir") != null) {
-
-            DbMusicas.getMusicas().remove(Integer.parseInt(request.getParameter("indice")));
+        } else if (request.getParameter("excluir") != null) {
+            int indice = Integer.parseInt(request.getParameter("id"));
+            DbMusicas.getMusicas().remove(indice);
             response.sendRedirect("../index.jsp");
         }
-
     } catch (Exception e) {%>
 <h1 style="color:red;"> A Error ocurred:<%= e.getMessage()%></h1>
 <%}%>
@@ -32,7 +30,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Deseja alterar esta Música?</h1>
+        <h1>Deseja excluir esta Música?</h1>
         <%
             try {
                 int indice = Integer.parseInt(request.getParameter("id"));
@@ -44,7 +42,7 @@
 
         <form>
             Indice:<br>
-            <input type="text" name="indice" value="<%=indice%>">
+            <input type="text" name="id" value="<%=indice%>">
             Nome: <br>
             <input type="text" name="musica" value="<%=musicas.getMusica()%>"> <br>
             Banda: <br>

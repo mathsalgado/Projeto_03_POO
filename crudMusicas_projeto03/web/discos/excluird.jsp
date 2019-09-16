@@ -16,7 +16,7 @@
     try {
         if (request.getParameter("excluir") != null) {
 
-            DbDiscos.getDiscos().remove(Integer.parseInt(request.getParameter("indice")));
+            DbDiscos.getDiscos().remove(Integer.parseInt(request.getParameter("id")));
             response.sendRedirect("../index.jsp");
         }
 
@@ -42,15 +42,15 @@
 
         <form>
             Indice:<br>
-            <input type="text" name="indice" value="<%=indice%>">
+            <input type="text" name="id" value="<%=indice%>">
             Título: <br>
-            <input type="text" name="musica" value="<%discos.getNome();%>"> <br>
+            <input type="text" name="musica" value="<%=discos.getNome()%>"> <br>
             Banda: <br>
-            <input type="text" name="banda" value="<%discos.getBanda();%>"> <br>
+            <input type="text" name="banda" value="<%=discos.getBanda()%>"> <br>
             Gênero: <br>
-            <input type="text" name="genero" value="<%discos.getGenero();%>"> <br>
+            <input type="text" name="genero" value="<%=discos.getGenero()%>"> <br>
             Mais Tocada: <br>
-            <input type="text" name="music" value="<%discos.getMusic();%>"> <br><br>
+            <input type="text" name="music" value="<%=discos.getMusic()%>"> <br><br>
 
             <input type="submit" name="cancelar" value="Cancelar">
             <input type="submit" name="excluir" value="Excluir">
