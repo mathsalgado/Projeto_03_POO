@@ -22,12 +22,14 @@
     <%}%>
 <html>
     <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <link rel="stylesheet" href="css/style.css"/>
         <title>Cadastro de Bandas - Adicionar</title>
     </head>
     <body>
-        <h1>Cadastre uma nova Banda</h1>
-        <form>
+    <center> <h1>Cadastre uma nova Banda</h1> </center>
+    <center>   <form>
             Nome: <br>
             <input type="text" name="nome" ><br>
             Gênero: <br>
@@ -37,6 +39,6 @@
             
             <input type="submit" name="cancelar" value="Cancelar">
             <input type="submit" name="add" value="Adicionar">
-        </form>
+        </form></center>
     </body>
 </html>

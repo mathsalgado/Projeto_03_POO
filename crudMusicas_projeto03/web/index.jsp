@@ -12,20 +12,23 @@
 <!DOCTYPE html>
 <html>
     <head>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <link rel="stylesheet" href="css/style.css"/>
         <title>CRUD MUSICAL</title>
     </head>
     <body>
-        <h1>Cadastro de Música, Bandas e discos</h1>
+    <center><h1>Cadastro de Música, Bandas e discos</h1></center>
         
-        <h2> Nossas Bandas </h2>
-        <table border="1">
+        <h2> <center>Nossas Bandas</center> </h2>
+        <table border="1" class="table">
             <tr>
-                <th>Índice</th>
-                <th>Nome</th>
-                <th>Gênero</th>
-                <th>Quantidade de Membros</th>
-                <th>Opções</th>
+                <th class="cabecalho">Índice</th>
+                <th class="cabecalho">Nome</th>
+                <th class="cabecalho">Gênero</th>
+                <th class="cabecalho">Quantidade de Membros</th>
+                <th class="cabecalho">Opções</th>
             </tr>  
             <% for(Banda banda: DbBanda.getBandas()){ %>
             <tr>
@@ -41,15 +44,18 @@
             
             <%}%>
         </table>    
-        <a href="./bandas/incluir.jsp"><h3> Nova Banda </h3> </a>
-        <h2> Nossas Músicas </h2>    
-        <table border="1">    
+      
+        <a href="./bandas/incluir.jsp"><button type="button" name="" value="" class="css3button">Nova Banda</button></a>
+            
+        <h2> <center>Nossas Músicas</center> </h2>    
+        
+        <table border="1" class="table">    
             <tr>
-                <th>Índice</th>
-                <th>Nome</th>
-                <th>Banda</th>
-                <th>Disco</th>
-                <th>Opções</th>
+                <th class="cabecalho">Índice</th>
+                <th class="cabecalho">Nome</th>
+                <th class="cabecalho">Banda</th>
+                <th class="cabecalho">Disco</th>
+                <th class="cabecalho">Opções</th>
             </tr>  
             <% for(Musicas musicas: DbMusicas.getMusicas()){ %>
             <tr>
@@ -58,12 +64,15 @@
                 <td><%= musicas.getBanda() %></td>
                 <td><%= musicas.getDisco() %></td>
                 <td>
+                    
                     <a href="./musicas/alterarm.jsp?id=<%=DbMusicas.getMusicas().indexOf(musicas)%>">Alterar</a>
                     <a href="./musicas/excluirm.jsp?id=<%=DbMusicas.getMusicas().indexOf(musicas)%>">Excluir</a>
                 </td>
             </tr>
             <%}%>
         </table>
-        <a href="./musicas/incluirm.jsp"><h3> Nova Música </h3> </a>
+    
+        <a href="./musicas/incluirm.jsp"><button type="button" name="" value="" class="css3button">Nova Música</button></a> 
+            
     </body>
 </html>

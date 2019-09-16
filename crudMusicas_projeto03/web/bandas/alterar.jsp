@@ -23,17 +23,20 @@
     <%}%>
 <html>
     <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <link rel="stylesheet" href="css/style.css"/>
         <title>Cadastro de Bandas - Alterar</title>
     </head>
     <body>
-        <h1>Altere sua Banda</h1>
+        
+    <center><h1>Alterar Banda</h1></center>
             
             <% //Dúvida try catch dando problemas (?)
                 int id = Integer.parseInt( request.getParameter("id") );%>
             <%Banda banda = DbBanda.getBandas().get(id);%> 
      
-        <form>
+    <center> <form>
             Indice <br>
             <input type="text" name="id" value="<%= id%>" ><br>
             Nome: <br>
@@ -45,6 +48,7 @@
             
             <input type="submit" name="cancelar" value="Cancelar">
             <input type="submit" name="incluir" value="Adicionar">
-        </form>
+            
+        </form> </center>
     </body>
 </html>

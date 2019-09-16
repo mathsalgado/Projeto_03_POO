@@ -24,11 +24,13 @@
     <%}%>
 <html>
     <head>
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/style.css"/>
         <title>Cadastro de Bandas - Excluir</title>
     </head>
     <body>
-        <h1>Tem certeza que deseja excluir a banda?</h1>
+    <center>  <h1>Tem certeza que deseja excluir a banda?</h1> </center>
             
             <% int valor = Integer.parseInt( request.getParameter("id") );%>
             <% if(DbBanda.getBandas().get(valor)==null){
@@ -36,7 +38,7 @@
             } %>
             <%Banda banda = DbBanda.getBandas().get(valor);%> 
      
-        <form>
+            <center><form>
             Indice <br>
             <input type="text" name="id" value="<%= valor%>" ><br>
             Nome: <br>
@@ -48,6 +50,6 @@
             
             <input type="submit" name="cancelar" value="Não">
             <input type="submit" name="excluir" value="Sim">
-        </form>
+                </form></center>
     </body>
 </html>
