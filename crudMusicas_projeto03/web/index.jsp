@@ -84,7 +84,7 @@
                 <th class="cabecalho">Título</th>
                 <th class="cabecalho">Banda</th>
                 <th class="cabecalho">Gênero</th>
-                <th class="cabecalho">Mais tocadas</th>
+                <th class="cabecalho">Mais tocada</th>
                 <th class="cabecalho">Opções</th>
             </tr>  
             <% for(Discos discos: DbDiscos.getDiscos()){ %>
@@ -96,14 +96,14 @@
                 <td><%= discos.getMusic() %></td>
                 <td>
                     
-                    <a href="./musicas/alterard.jsp?id=<%=DbDiscos.getDiscos().indexOf(discos)%>">Alterar</a>
-                    <a href="./musicas/excluird.jsp?id=<%=DbDiscos.getDiscos().indexOf(discos)%>">Excluir</a>
+                    <a href="./discos/alterard.jsp?id=<%=DbDiscos.getDiscos().indexOf(discos)%>">Alterar</a>
+                    <a href="./discos/excluird.jsp?id=<%=DbDiscos.getDiscos().indexOf(discos)%>">Excluir</a>
                 </td>
             </tr>
             <%}%>
         </table>
     
-        <a href="./musicas/incluird.jsp"><button type="button" name="" value="" class="css3button">Novo Disco</button></a> 
+        <a href="./discos/incluird.jsp"><button type="button" name="" value="" class="css3button">Novo Disco</button></a> 
             
         
     </body>

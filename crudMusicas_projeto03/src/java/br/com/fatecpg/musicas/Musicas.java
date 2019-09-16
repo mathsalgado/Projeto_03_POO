@@ -16,10 +16,10 @@ public class Musicas {
     private String Banda;
     private String Disco;
     
-    public Musicas (String Banda, String Disco, String Musica) {
+    public Musicas (String Musica, String Banda, String Disco) {
+        this.Musica = Musica;
         this.Banda = Banda;
         this.Disco = Disco;
-        this.Musica = Musica;
         
     } 
 

@@ -22,6 +22,7 @@
       
     } catch (Exception e){%>
            <h1 style="color:red;"> Errroouu!:<%= e.getMessage() %></h1>
+           
     }
 %>
 <html>
@@ -37,7 +38,7 @@
             <% if(DbDiscos.getDiscos().get(indice) == null){
                 response.sendRedirect("../index.jsp");
             }
-            Discos Discos = DbDiscos.getDiscos().get(indice);
+            Discos discos = DbDiscos.getDiscos().get(indice);
             %>
         
         <form>
