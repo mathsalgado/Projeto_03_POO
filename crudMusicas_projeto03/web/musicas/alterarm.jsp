@@ -16,10 +16,10 @@
     }
     try{
         if (request.getParameter("alterar") != null){
-            int indice = Integer.parseInt(request.getParameter("id"));
             String musica = request.getParameter("musica");
             String banda = request.getParameter("banda");
             String disco = request.getParameter("disco");
+            int indice = Integer.parseInt(request.getParameter("id"));
             DbMusicas.getMusicas().set(indice, new Musicas (musica, banda, disco));
             response.sendRedirect("../index.jsp");
         }
@@ -39,7 +39,7 @@
         
         <form>
             Indice:<br>
-            <input type="text" name="indice" value="<%=indice%>">
+            <input type="text" name="id" value="<%=indice%>">
             Nome: <br>
             <input type="text" name="musica" value="<%=musicas.getMusica()%>"> <br>
             Banda: <br>

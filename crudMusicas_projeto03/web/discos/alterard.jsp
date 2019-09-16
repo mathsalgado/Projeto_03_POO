@@ -15,11 +15,12 @@ if(request.getParameter("cancelar")!=null){
     }
     try {
          if (request.getParameter("alterar") != null) {
-            int indice = Integer.parseInt(request.getParameter("id"));
+            
             String nome = request.getParameter("musica");
             String banda = request.getParameter("banda");
             String genero = request.getParameter("disco");
             String music = request.getParameter("music");
+            int indice = Integer.parseInt(request.getParameter("id"));
             DbDiscos.getDiscos().set(indice, new Discos(nome, banda, genero, music));
             response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/"));
            
