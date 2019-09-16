@@ -21,7 +21,7 @@
             String disco = request.getParameter("disco");
             int indice = Integer.parseInt(request.getParameter("id"));
             DbMusicas.getMusicas().set(indice, new Musicas (musica, banda, disco));
-            response.sendRedirect("../index.jsp");
+             response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/"));
         }
     } catch (Exception e){%>
            <h1 style="color:red;"> A Error ocurred:<%= e.getMessage() %></h1>
@@ -33,13 +33,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Deseja alterar esta Música?</h1>
+    <center> <h1>Deseja alterar esta Música?</h1></center>
             <% int indice = Integer.parseInt(request.getParameter("id"));%>
             <%Musicas musicas = DbMusicas.getMusicas().get(indice);%>
         
-        <form>
+    <center><form>
             Indice:<br>
-            <input type="text" name="id" value="<%=indice%>">
+            <input type="text" name="id" value="<%=indice%>"><br>
             Nome: <br>
             <input type="text" name="musica" value="<%=musicas.getMusica()%>"> <br>
             Banda: <br>
@@ -50,6 +50,6 @@
             <input type="submit" name="cancelar" value="Cancelar">
             <input type="submit" name="alterar" value="Alterar">
               
-        </form>
+        </form></center>
     </body>
 </html>

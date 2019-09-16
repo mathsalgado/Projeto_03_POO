@@ -12,11 +12,11 @@
 
     try {
         if (request.getParameter("cancelar") != null) {
-            response.sendRedirect("../index.jsp");
+            response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/"));
         } else if (request.getParameter("excluir") != null) {
             int indice = Integer.parseInt(request.getParameter("id"));
             DbMusicas.getMusicas().remove(indice);
-            response.sendRedirect("../index.jsp");
+             response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/"));
         }
     } catch (Exception e) {%>
 <h1 style="color:red;"> A Error ocurred:<%= e.getMessage()%></h1>
@@ -30,19 +30,19 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Deseja excluir esta Música?</h1>
+    <center><h1>Deseja excluir esta Música?</h1></center>
         <%
             try {
                 int indice = Integer.parseInt(request.getParameter("id"));
                 if (DbMusicas.getMusicas().get(indice) == null) {
-                    response.sendRedirect("./Projeto_03_POO/index.jsp");
+                     response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/"));
                 }
                 Musicas musicas = DbMusicas.getMusicas().get(indice);
         %>
 
-        <form>
+    <center><form>
             Indice:<br>
-            <input type="text" name="id" value="<%=indice%>">
+            <input type="text" name="id" value="<%=indice%>"><br>
             Nome: <br>
             <input type="text" name="musica" value="<%=musicas.getMusica()%>"> <br>
             Banda: <br>
@@ -53,7 +53,7 @@
             <input type="submit" name="cancelar" value="Cancelar">
             <input type="submit" name="excluir" value="Exlcuir">
 
-        </form>
+        </form></center>
 
         <% } catch (Exception ex) { %>
         <h1 style="color:red;"> Erro ao obter o dado!></h1>

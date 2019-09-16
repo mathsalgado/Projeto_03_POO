@@ -32,17 +32,17 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Deseja alterar este Disco?</h1>
+    <center><h1>Deseja alterar este Disco?</h1></center>
         <% int indice = Integer.parseInt(request.getParameter("id"));%>
         <% if (DbDiscos.getDiscos().get(indice) == null) {
-                response.sendRedirect("../index.jsp");
+               response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/"));
             }
             Discos discos = DbDiscos.getDiscos().get(indice);
         %>
 
-        <form>
+    <center><form>
             Indice:<br>
-            <input type="text" name="id" value="<%=indice%>">
+            <input type="text" name="id" value="<%=indice%>"><br>
             Título: <br>
             <input type="text" name="musica" value="<%=discos.getNome()%>"> <br>
             Banda: <br>
@@ -55,6 +55,6 @@
             <input type="submit" name="cancelar" value="Cancelar">
             <input type="submit" name="excluir" value="Excluir">
 
-        </form>
+        </form></center>
     </body>
 </html>

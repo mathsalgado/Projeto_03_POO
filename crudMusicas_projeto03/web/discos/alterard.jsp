@@ -36,13 +36,13 @@ if(request.getParameter("cancelar")!=null){
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Deseja alterar este Disco?</h1>
+    <center><h1>Deseja alterar este Disco?</h1></center>
         <% int indice = Integer.parseInt(request.getParameter("id"));%>
         <%Discos discos = DbDiscos.getDiscos().get(indice);%>
 
-        <form>
+      <center>  <form>
             Indice:<br>
-            <input type="text" name="id" value="<%=indice%>">
+            <input type="text" name="id" value="<%=indice%>"><br>
             Título: <br>
             <input type="text" name="musica" value="<%=discos.getNome()%>"> <br>
             Banda: <br>
@@ -55,6 +55,6 @@ if(request.getParameter("cancelar")!=null){
             <input type="submit" name="cancelar" value="Cancelar">
             <input type="submit" name="alterar" value="Alterar">
 
-        </form>
+          </form></center>
     </body>
 </html>
